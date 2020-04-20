@@ -12,6 +12,10 @@ body {
       h1 {
         font-size: 60px;
         color: white;
+
+        @include forMobile {
+          font-size: 45px;
+        }
       }
 
       header {
@@ -25,6 +29,11 @@ body {
         @include forMobile {
           flex-direction: column;
         }
+
+        @include forTablet {
+          flex-direction: column;
+          
+        }
       }
 
       h1, h2, h3, h4 {
@@ -36,9 +45,18 @@ body {
         display: flex;
         display: row;
         justify-content: center;
+        background-color: white;
 
         @include forMobile {
           flex-direction: column;
+          margin-top: 10px;
+        }
+
+        @include forTablet {
+          margin-top: 10px;
+          flex-direction: row;
+          width: 81vw;
+          justify-content: space-between;
         }
       }
 
@@ -61,6 +79,10 @@ body {
 
         input {
           margin-left: 8px;
+        }
+
+        input[type="text"]{
+          border: 1px solid lightgray;
         }
       }
 
