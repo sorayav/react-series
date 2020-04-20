@@ -1,0 +1,236 @@
+body {
+  box-sizing: border-box;
+  background-color: $mainColor;
+  
+  .App {
+    text-align: center;
+    
+    .container {
+    margin: auto;
+    width: 90vw;
+
+      h1 {
+        font-size: 60px;
+        color: white;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 10px;
+        padding: 0;
+
+        @include forMobile {
+          flex-direction: column;
+        }
+      }
+
+      h1, h2, h3, h4 {
+        margin-block-start: 0px;
+        margin-block-end: 0;
+      }
+
+      .filters {
+        display: flex;
+        display: row;
+        justify-content: center;
+
+        @include forMobile {
+          flex-direction: column;
+        }
+      }
+
+      ul, li {
+        list-style: none;
+        padding-inline-start: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .filter-search, .filter-status {
+        background-color: white;
+        height: 50px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          margin-left: 8px;
+        }
+      }
+
+      .show-list {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+        li {
+        margin: 5px;
+        }
+      }
+
+      .show-card {
+        width: 300px;
+        height: 450px;
+        margin: 10px;
+        padding: 10px 0;
+        background-color: white;
+        border: 1px solid rgb(209, 209, 209);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        @include forMobile {
+          width: 250px;
+        }
+
+        .show-image {
+          height: 320px;
+
+          img {
+            height: 100%;
+          }
+        }
+
+        .show-full-info {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          color: black;
+          
+          &:hover {
+            bottom: 0px;
+            background-color: transparentize($color: #fff, $amount: 0.2);
+            height: 150px;
+            padding-top: 20px;
+
+            &:after {
+              content: 'Click for more info';
+              font-weight: bold;
+            }
+          }
+
+          .show-title {
+            font-size: 13px;
+            margin: auto;
+            border-bottom: 1px dashed $mainColor;
+            width: 200px;
+            
+          }
+        }
+
+        li .show-info {
+          margin: 0;
+        }
+      }
+
+      .show-details {
+        margin: auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        @include forMobile {
+          flex-direction: column;
+          height: auto;
+          overflow-x: hidden;
+        }
+        
+        .show-details-image {
+          width: 500px;
+          height: 500px;
+          background-color: $mainColor;
+          padding: 50px;
+
+          @include forMobile {
+            width: 400px;
+            height: 400px;
+            padding: 40px 0;
+          }
+
+          @include forTablet {
+            height: 400px;
+            padding: 0;
+          }
+
+          img {
+            height: 100%;
+            border-radius: 10px;
+          }
+        }
+
+        .show-details-full {
+          width: 500px;
+          height: 500px;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          text-align: justify;
+          background-color: $mainColor;
+          padding: 50px;
+          border-left: 1px dashed white;
+
+          @include forMobile {
+            width: 250px;
+            height: auto;
+            border-top: 1px dashed white;
+            border-left: none;
+            justify-content: flex-start;
+            padding: 10px;
+          }
+
+          @include forTablet {
+            width:320px;
+          }
+
+          .show-details-title {
+            font-size: 70px;
+            color: white;
+            
+            @include forMobile {
+              font-size: 40px;
+            }
+          }
+
+          .show-genres {
+            padding-inline-start: 0;
+            display: flex;
+            align-items: center;
+            
+            li {
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+}
+
+  footer {
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    padding: 10px 0;
+    color: white;
+    font-size: 13px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
